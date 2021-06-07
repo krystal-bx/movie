@@ -35,31 +35,31 @@ export default {
         el: ".swiper-pagination",
         type: "bullets",
         clickable: true,
-        dynamicBullets: false
-      }
+        dynamicBullets: false,
+      },
     };
   },
   components: {
-    Footer
+    Footer,
   },
   created() {
     this.getArtists();
   },
   navigation: {
     nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev"
+    prevEl: ".swiper-button-prev",
   },
   methods: {
     getArtists() {
-      this.axios.get(api.artists).then(response => {
+      this.axios.get(api.artists).then((response) => {
         this.artists = response.data.data.results;
       });
-    }
-  }
+    },
+  },
 };
 </script>
 
-<style>
+<style scoped>
 .people {
   width: 100%;
 }
